@@ -1,0 +1,24 @@
+env:
+  global:
+    - AWS_ACCESS_KEY_ID=key
+    - AWS_SECRET_ACCESS_KEY=secret
+gemfile:
+  - gemfiles/libxml.gemfile
+  - gemfiles/nokogiri.gemfile
+  - gemfiles/oga.gemfile
+  - gemfiles/ox.gemfile
+  - gemfiles/rexml.gemfile
+language: ruby
+matrix:
+  allow_failures:
+    - rvm: ruby-head
+  exclude:
+    - rvm: jruby-9000
+      gemfile: gemfiles/ox.gemfile
+rvm:
+  - 2.2
+  - 2.3.4
+  - 2.4.1
+  - jruby-9000
+  - ruby-head
+sudo: false
