@@ -1,0 +1,38 @@
+<h3>Auction for : <%=@auction.title%> | 
+<!-- listed by <a href="/users/1"> <=@auction.seller.name%></a> -->
+</h3>
+  <p>auction Desciption: <%=@auction.description%> </p>
+  <p>auction Start Time: <%=@auction.start_time%> </p>
+  <p>auction End Time: <%=@auction.end_time%> </p>
+  <p>auction Start Price: $<%=@auction.price%> </p>
+  <p>auction Current Price: $<%=@auction.price%> </p>
+
+  <p>auction Bids: </p>
+
+  
+<%#-user has to be logged in to bid
+-auction has not ended
+-user can not be the same as the seller
+-bid has to be higher than the current price%>
+
+
+
+
+
+
+
+  <p id="price-label">Current Price:</span> <span id="price">$</p>
+  <br><br>
+  <div>place bid form goes here :</div>
+  <form class="bid-on-auction" action="/auctions/<%=@auction.id%>/bids/new" method="post">
+          <input name="bid_amount" type="number" step="any">
+          <br>
+          
+          <%#not sure how to write this form%>
+
+          <input class="button" type="submit" value="Submit Bid">
+  </form>
+
+  <!---time_passed  = time.now - start_time
+  calculate days left 
+  hour ending -->

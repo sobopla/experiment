@@ -1,0 +1,42 @@
+<div id="page-container">
+  <h1 class="new-item">List a new item!!</h1><br>
+  <% if @errors %>
+  <ul>
+  <% @errors.each do |error| %>
+
+    <li><%= error %></li>
+    <% end %>
+  </ul>
+  <% end %>
+
+  <form class="new-auction-form" action="/auctions" method="post">
+    <table class="new-auction-form">
+      <tr>
+        <td><label for="auction[title]">auction Name:</label></td>
+        <td>&nbsp;&nbsp;&nbsp;</td>
+        <td><input name="auction[title]" type="text"></td>
+      </tr>
+      <tr>
+        <td><label for="auction[description]">auction Description:</label></td>
+        <td>&nbsp;&nbsp;&nbsp;</td>
+        <td><textarea name="auction[description]" type="text"></textarea></td>
+      </tr>
+      <tr>
+        <td><label for="auction[price]">Starting Price:</label></td>
+        <td>&nbsp;&nbsp;&nbsp;</td>
+        <td><input name="auction[price]" type="number" step="any"></td>
+      </tr>
+      <tr>
+        <td><label for="auction[start_time]">Starting Time:</label></td>
+        <td>&nbsp;&nbsp;&nbsp;</td>
+        <td><input name="auction[start_time]" type="datetime-local"></td>
+      </tr>
+      <tr>
+        <td><label for="auction[end_time]">Ending Time:</label></td>
+        <td>&nbsp;&nbsp;&nbsp;</td>
+        <td><input name="auction[end_time]" type="datetime-local"></td>
+      </tr>
+    </table>
+      <br><input class="button" type="submit" value="Create auction!">
+  </form>
+</div>

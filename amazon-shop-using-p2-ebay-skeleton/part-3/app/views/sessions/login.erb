@@ -1,0 +1,40 @@
+<% if @successful %>
+  <h1 class="alert alert-success"><%= @successful %></h1>
+<% end %>
+
+<% if @error %>
+  <h2 class="alert alert-danger"><%= @error %></h2>
+<% end %>
+
+
+<% if @errors %>
+  <% @errors.each do |error|%>
+    <li class="alert alert-danger"> <%= error %> </li>
+    <% end %>
+  <% end %>
+
+  <% if @successful %>
+    <li class="alert alert-success"> <%= @successful %> </li>
+    <% end %>
+
+<div class = "container">
+<h1>Login</h1><br>
+
+<form method="POST" action="/sessions">
+  <div class="container">
+    <label><b>Email</b></label>
+    <input type="text" placeholder="Enter Email" name="user[email]" required>
+
+    <label><b>Password</b></label>
+    <input type="password" placeholder="Enter Password" name="user[password]" required>
+
+    <button type="submit">Login</button>
+    <input type="checkbox" checked="checked"> Remember me
+  </div>
+
+  <div class="container" style="background-color:#f1f1f1">
+    <button type="button" class="cancelbtn">Cancel</button>
+    <span class="psw">Forgot <a href="#">password?</a></span>
+  </div>
+</form>
+</div>
