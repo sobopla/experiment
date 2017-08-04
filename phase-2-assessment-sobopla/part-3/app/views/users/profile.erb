@@ -1,0 +1,38 @@
+
+<div class="container">
+  <div class=user-greeting>
+    <h3>Hello!  <%= current_user.name %>'s' profile page</h3>
+    <p> name: <%= current_user.name %></p>
+    <p> email: <%= current_user.email %></p>
+  </div>
+  <% if logged_in? %>
+  <% if current_user.id == @user.id %>
+
+  <ul>
+    <% @auctions.each do |auction| %>
+
+    <li>
+      <a href="/auctions/<%=auction.id%>"> <%= auction.title %> </a>
+      <br>
+      <a href="/auctions/<%=auction.id%>/edit"> edit this auction </a>
+  
+<!--       delete an auction here: -->
+
+      <form class="create-item" action="/auctions/<%=auction.id%>" method="post">
+         <input type="hidden" name="_method" value="delete">
+         <input class="button" type="submit" value="delete auction">
+      </form>
+  
+      </li>
+    <% end %>
+  </ul>
+
+  <br>
+  <form class="create-item" action="/auctions/new" method="get">
+    <input class="button" type="submit" value="List an Item">
+  </form>
+  <% end %>
+  <% end %>
+</div>
+
+<!-- utilizes the delete route -->

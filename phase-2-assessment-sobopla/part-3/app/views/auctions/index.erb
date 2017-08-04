@@ -1,0 +1,9 @@
+<p>ALL THE AUCTIONS GO HERE</p>
+
+
+<ul>
+    <% @auctions.each do |auction| %>
+
+  <li><a href="/auctions/<%=auction.id%>"> <%= auction.title %> </a></li>
+      <% end %>
+</ul>

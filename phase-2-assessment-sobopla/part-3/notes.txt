@@ -1,0 +1,12 @@
+ <%#<% if @item.bids.length > 0 %>%>
+    <p> Current Highest Bidder: <a href="/users/<%=@item.bids.last.bidder.id%>"><%= @item.bids.last.bidder.username %></a></p>
+  <% else %>
+    <p> Bid now!</p>
+  <% end %>
+------------------------
+float price
+------------------------
+check for logged in on bidding
+------------------------
+check for not bidding on own items
+-----------------------------
